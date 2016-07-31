@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:text="初始化设备说明:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="    1.请连接到要连接模块的Wifi\n      (WIFI名与密码请看模块说明)"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="    2.输入模块需要连入的wifi名与密码"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="    3.为模块设置备注，便于区分\n      (如：客厅)"/>
+        <EditText
+            android:id="@+id/et_wifiName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="12345"
+            android:hint="请输入模块需要连入的WIFI名"
+            android:textColorHint="#55ffffff"/>
+
+        <EditText
+            android:id="@+id/et_wifiPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12345"
+            android:textColor="#ffffff"
+            android:hint="请输入模块需要连入的WIFI密码"
+            android:textColorHint="#99ffffff"/>
+
+        <EditText
+            android:id="@+id/et_sn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="12345"
+            android:hint="请输入设备SN码"
+            android:textColorHint="#99ffffff"/>
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/bt_initDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="初始化"/>
+
+
+    </LinearLayout>
+</LinearLayout>
