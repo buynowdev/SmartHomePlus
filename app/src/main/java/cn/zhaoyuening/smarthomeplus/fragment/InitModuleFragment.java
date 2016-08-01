@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.dd.CircularProgressButton;
 
@@ -43,8 +44,10 @@ public class InitModuleFragment extends Fragment {
         //点击初始化按钮
         //初始化开始
         bt_initModule.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), "正在初始化，请稍后", Toast.LENGTH_SHORT).show();
                 Log.d(InitModuleFragment.this.getClass().getSimpleName(),"点击初始化按钮——初始化开始");
 
                 //获取编辑框的信息
@@ -54,6 +57,27 @@ public class InitModuleFragment extends Fragment {
                 Runnable runnable = new InitModuleRunnable(
                         MyInfoSet.INITMODULE_IP,MyInfoSet.INITMODULE_PORT,sn,wifiName,wifiPassword);
                 ThreadManager.excute(runnable);
+                //模块初始化成功
+                InitModuleSuccess();
+            }
+        });
+    }
+
+    private void InitModuleSuccess() {
+        ThreadManager.excute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                    bt_initModule.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getContext(), "初始化模块成功", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

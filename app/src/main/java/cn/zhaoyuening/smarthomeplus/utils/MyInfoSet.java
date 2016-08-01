@@ -7,7 +7,7 @@ package cn.zhaoyuening.smarthomeplus.utils;
 public interface MyInfoSet {
     //初始化模块  tcp 端口号
     int INITMODULE_PORT = 8080;
-    //初始化模块 tcp 地址  192.168.4.1
-    String INITMODULE_IP ="192.168.0.104";
+    //初始化模块 tcp 地址
+    String INITMODULE_IP ="192.168.4.1";
 
 }
